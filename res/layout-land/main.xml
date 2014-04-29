@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+
+        <SurfaceView
+            android:id="@+id/surfaceview"
+            android:layout_width="970dp"
+            android:layout_height="510dp" />
+
+        <Button
+            android:id="@+id/accountInfo"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="Account Info"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Transfer Money"
+        android:id="@+id/transfer"
+        android:layout_alignTop="@+id/budget"
+        android:layout_toRightOf="@+id/accountInfo" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Budget"
+        android:id="@+id/budget"
+        android:layout_alignTop="@+id/accountInfo"
+        android:layout_toRightOf="@+id/transfer" />
+
+    <ImageView
+        android:layout_width="260dp"
+        android:layout_height="175dp"
+        android:id="@+id/cardOutline1"
+        android:src="@drawable/card1"
+        android:layout_below="@+id/accountInfo"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="90dp"/>
+
+    <TextView
+        android:layout_width="260dp"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Checking Account: "
+        android:textColor="#000"
+        android:background="#fff"
+        android:paddingTop="3dp"
+        android:id="@+id/accountLabel"
+        android:layout_below="@+id/cardOutline1"
+        android:layout_alignLeft="@+id/cardOutline1" />
+
+    <TextView
+        android:layout_width="260dp"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Balance: $3,743.68 "
+        android:paddingBottom="3dp"
+        android:background="#fff"
+        android:textColor="#000"
+        android:id="@+id/balanceLabel"
+        android:layout_below="@+id/accountLabel"
+        android:layout_alignRight="@+id/accountLabel" />
+
+    <LinearLayout
+        android:id="@+id/accountInfoLayout"
+        android:orientation="vertical"
+        android:layout_width="580dp"
+        android:layout_height="510dp"
+        android:background="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="#ddd">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Checking Account Info"
+                android:textColor="#000"
+                android:id="@+id/textView"
+                android:padding="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text=""
+                android:id="@+id/search"
+                android:background="@drawable/searchbtn"
+                android:layout_alignTop="@+id/exitAccountInfo"
+                android:layout_toLeftOf="@+id/exitAccountInfo"
+                android:layout_marginRight="30dp" />
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:id="@+id/editText"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="18dp"
+                android:hint="Search transactions"/>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text=""
+                android:background="@drawable/exit"
+                android:id="@+id/exitAccountInfo"
+                android:layout_above="@+id/editText"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/cancelSearch"
+                android:layout_alignTop="@+id/editText"
+                android:layout_toRightOf="@+id/editText" />
+
+        </RelativeLayout>
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:gravity="left"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Scan another card:"
+        android:id="@+id/scanIt"
+        android:layout_above="@+id/card2"
+        android:layout_alignLeft="@+id/card2" />
+    <ImageView
+        android:layout_width="260dp"
+        android:layout_height="175dp"
+        android:id="@+id/card2"
+        android:src="@drawable/card2"
+        android:layout_above="@+id/saveAccountLabel"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+
+        android:layout_alignRight="@+id/balanceLabel" />
+
+    <TextView
+        android:layout_width="260dp"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Savings Account: "
+        android:id="@+id/saveAccountLabel"
+        android:background="#fff"
+        android:textColor="#000"
+        android:paddingTop="3dp"
+        android:layout_above="@+id/saveBalanceLabel"
+        android:layout_alignLeft="@+id/card2" />
+
+    <TextView
+        android:layout_width="260dp"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Balance: $1,166.09 "
+        android:background="#fff"
+        android:textColor="#000"
+        android:paddingBottom="3dp"
+        android:id="@+id/saveBalanceLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_alignRight="@+id/saveAccountLabel" />
+
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Transfer"
+        android:id="@+id/cancelTransfer"/>
+
+    <TextView
+        android:id="@+id/startLabel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:text="Scan your debit, credit or bank card"/>
+
+</RelativeLayout>
